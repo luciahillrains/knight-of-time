@@ -1,11 +1,11 @@
-import { HomeComponent } from './components/home/home.component';
+import {TitleScreenComponent} from './title-screen/title-screen.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
+        component: TitleScreenComponent
     }
 ];
 

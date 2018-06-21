@@ -1,0 +1,27 @@
+$color-blue: #93baf9;
+
+.title {
+	color: $color-blue;
+	position: absolute;
+	top:803px;
+}
+
+.blue-horiz-block {
+	width:100%;
+	background-color: $color-blue;
+	position:absolute;
+	top:923px;
+}
+
+.options-menu {
+
+	button {
+		margin: 130px;
+		font-size: 2em;
+
+		&:hover {
+			text-decoration:underline;
+			cursor: pointer;
+		}
+	}
+}
