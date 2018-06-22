@@ -1,4 +1,6 @@
+import {Element} from './card';
+
 export class Affinity {
-	strong: string[];
-	weak: string[];
+	strong: Element[] = [];
+	weak: Element[] = [];
 }

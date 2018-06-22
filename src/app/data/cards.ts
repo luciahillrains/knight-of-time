@@ -1,4 +1,4 @@
-export const CARD_JSON = `
+export const CARDS_JSON = `
 	{ 
   "dCard": {
     "name": "Debug Card 12",
@@ -1951,38 +1951,6 @@ export const CARD_JSON = `
     "effect": {
       "action": "-",
       "constant": "0",
-      "operand": "HP"
-    },
-    "dot": {},
-    "unlocks": "",
-    "affinity": "Dark"
-  },
-  "ulleSpecialAttack": {
-    "name": "Tell Ulle to Use Special Attack",
-    "description": "Tell Ulle to use his special attack, \"Mojuira\"",
-    "power": 0,
-    "color": "White",
-    "rarity": "Common",
-    "specialEffect": "Companion Special",
-    "effect": {
-      "action": "",
-      "constant": "",
-      "operand": ""
-    },
-    "dot": {},
-    "unlocks": "",
-    "affinity": "Light"
-  },
-  "mojuira": {
-    "name": "Mojuira",
-    "description": "Ulle's famous special move. - a powerful square ",
-    "power": 9,
-    "color": "White",
-    "rarity": "Common",
-    "specialEffect": "Weaken",
-    "effect": {
-      "action": "-",
-      "constant": "X",
       "operand": "HP"
     },
     "dot": {},

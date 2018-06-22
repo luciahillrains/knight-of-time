@@ -5,6 +5,7 @@ export enum CardColor {
 }
 
 export enum SpecialEffect {
+	NONE,
 	FEAR,
 	RESIST_FIRE,
 	HURT_FIRE,
@@ -38,8 +39,8 @@ export enum SpecialEffect {
 	ESCAPE,
 	GAURD,
 	USE_ITEM,
-	REPEL_1000,
-	REPEL_5000,
+	REPEL_SHORT,
+	REPEL_LONG,
 	FORCE_RUN,
 	HEAL_ONE,
 	HEAL_ALL,
@@ -73,12 +74,14 @@ export enum Element {
 }
 
 export enum EffectAction {
-	RECOVERY,
-	DAMAGE
+	ADD,
+	SUBTRACT,
+	NONE
 }
 
 export enum Operand {
 	HP,
+	MAX_HP,
 	CARDS,
 	ATTACK,
 	DEFENSE,
@@ -86,7 +89,9 @@ export enum Operand {
 	INTELLIGENCE,
 	LUCK,
 	POISE,
-	ACCURACY
+	ACCURACY,
+	CARD_POWER,
+	NONE
 }
 
 export class Effect {
@@ -113,9 +118,10 @@ export class Card {
 	power:number;
 	color: CardColor;
 	specialEffect: SpecialEffect;
-	affinity: Element;
+	element: Element;
 	affliction: Affliction;
 	accuracy: number;
 	unlocks: string;
 	rarity: Rarity;
+	effect: Effect;
 }
