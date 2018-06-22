@@ -12,6 +12,7 @@ export class Item {
 	name: string;
 	description: string;
 	type: ItemType;
-	cards: string[];
+	cards: string[] = [];
 	effect: Effect;
+	specialEffect: SpecialEffect[] = [];
 }

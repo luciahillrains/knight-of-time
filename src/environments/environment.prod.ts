@@ -1,4 +1,6 @@
 export const AppConfig = {
   production: true,
-  environment: 'PROD'
+  environment: 'PROD',
+   newGameStart: "gk_throneroom",
+  debugnewGameStart:  "bigRoom"
 };

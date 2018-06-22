@@ -15,7 +15,7 @@ export class Enemy {
 	defense:number;
 	hitRate:number;
 	accuracy:number;
-	receive: Gifts;
-	cards: string[];
+	reward: Gifts;
+	cards: string[] = [];
 	element: Element;
 }
