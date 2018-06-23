@@ -1,5 +1,4 @@
 <app-menu></app-menu>
-
-<p>
-  game-screen works!
-</p>
+<div class="game-area">
+	<app-map-tile *ngFor="let msq of mapService.map" [tile]="msq.tile" [event]="msq.event"></app-map-tile>
+</div>

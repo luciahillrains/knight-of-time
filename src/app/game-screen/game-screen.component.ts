@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MapService} from '../map.service';
 
 @Component({
   selector: 'app-game-screen',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private mapService:MapService) { }
 
   ngOnInit() {
   }

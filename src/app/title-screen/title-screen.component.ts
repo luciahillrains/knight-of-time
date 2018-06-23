@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppConfig } from '../../environments/environment';
 
 import {DataService} from '../data.service';
-import {AffinityImporter} from '../importers/affinity-importer';
+import {MapService} from '../map.service';
 
 @Component({
   selector: 'app-title-screen',
@@ -12,10 +12,9 @@ import {AffinityImporter} from '../importers/affinity-importer';
 export class TitleScreenComponent implements OnInit {
 	build:string = '0';
 
-  constructor(private dataService:DataService) {
+  constructor(private dataService:DataService, private mapService:MapService) {
   	this.build = AppConfig.build;
-
-  	
+    this.mapService.loadMap(AppConfig.newGameStart);
    }
 
   ngOnInit() {
