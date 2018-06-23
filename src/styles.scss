@@ -52,4 +52,17 @@ button {
 	color: $color-blue;
 }
 
+.options-menu {
+
+	button {
+		margin: 130px;
+		font-size: 2em;
+
+		&:hover {
+			text-decoration:underline;
+			cursor: pointer;
+		}
+	}
+}
+
 

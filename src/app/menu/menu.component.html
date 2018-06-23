@@ -1,0 +1,12 @@
+<div class="menu-container" [ngClass]="getClass()">
+	<div class="character-name">Joan</div>
+	<div class="hp-container">HP: XX/XX</div>
+	<div class="options-menu" style="width:100%">
+		<button>Items</button>
+		<button>Status</button>
+		<button>Battle</button>
+		<button>Journal</button>
+		<button>Config</button>
+		<button [ngClass]="getDebugClass()">Debug</button>
+	</div>
+</div>
