@@ -6,7 +6,7 @@
 export const AppConfig = {
   production: false,
   environment: 'DEV',
-  build: 'wip 1',
+  build: 'wip 2',
     newGameStart: "gk_throneroom",
   debugnewGameStart:  "bigRoom"
 };
