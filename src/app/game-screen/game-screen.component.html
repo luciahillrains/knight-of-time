@@ -1,4 +1,4 @@
 <app-menu></app-menu>
-<div class="game-area">
+<div class="game-area" [ngStyle]="calculateDimensions()">
 	<app-map-tile *ngFor="let msq of mapService.map" [tile]="msq.tile" [event]="msq.event"></app-map-tile>
 </div>

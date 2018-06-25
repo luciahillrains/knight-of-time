@@ -4,12 +4,16 @@ import {MapSquare} from './objects/map-square';
 import {Room} from './objects/room';
 import {Tile} from './objects/tile';
 import {Event} from './objects/event';
+
+export const MAP_TILE_SIZE = 64;
+
 @Injectable({
   providedIn: 'root'
 })
 export class MapService {
 	currentRoomName:string;
     map:MapSquare[];
+    room:Room;
   constructor(private data:DataService) { }
 
   loadMap(newRoomName) {
@@ -20,7 +24,7 @@ export class MapService {
   private translate() {
   	let room:Room = this.data.rooms.get(this.currentRoomName);
   	let map:MapSquare[] = [];
-
+    this.room = room;
      for(let i = 0; i < room.layer1.length; i++) {
        let mq:MapSquare = new MapSquare();
        let tileNum = room.layer1[i];
