@@ -42,5 +42,25 @@ export class MapService {
        map.push(mq);
      }
   	this.map = map;
+    if(room.playerStart.length == 2) {
+      this.startPlayer(room);
+    }
+  }
+
+  private startPlayer(room:Room) {
+    let z = this.convertXYtoZ(room.playerStart, room.x);
+      let proposedPlayerStart = this.map[z];
+      if(proposedPlayerStart.event.sprite !== "blank") {
+        console.log("ERROR: Cannot start player on space with event");
+        return;
+      }
+      proposedPlayerStart.hasPlayer = true;
+  }
+
+  private convertXYtoZ(playerStart:number[], roomWidth:number) {
+    let x = playerStart[0];
+    let y = playerStart[1];
+
+    return y * roomWidth + x;
   }
 }

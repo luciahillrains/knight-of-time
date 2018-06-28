@@ -18,7 +18,7 @@ export class EventStep {
 
 export class Event {
 	name: string;
-	sprite: string;
+	sprite: string = "blank";
 	passive: boolean; //what does this do?
 	default: EventStep[] = [];
 	events: Map<string, EventStep[]> = new Map();

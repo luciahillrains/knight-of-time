@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Tile} from '../objects/tile';
-import {Event} from '../objects/event';
+import {MapSquare} from '../objects/map-square';
 
 @Component({
   selector: 'app-map-tile',
@@ -9,10 +8,7 @@ import {Event} from '../objects/event';
 })
 export class MapTileComponent implements OnInit {
 	@Input()
-	tile:Tile;
-
-	@Input()
-	event:Event = new Event();
+	mapSquare:MapSquare;
 
   constructor() { }
 
@@ -21,15 +17,22 @@ export class MapTileComponent implements OnInit {
 
   generateWrapperStyle() {
   	return {
-  		"background-image": `url("assets/objects/${this.tile.sprite}.png")`
+  		"background-image": `url("assets/objects/${this.mapSquare.tile.sprite}.png")`
   	}
   }
 
   generateObjectSrc() {
-  	if(typeof this.event === 'undefined') {
+  	if(typeof this.mapSquare.event === 'undefined') {
   		return "";
   	}
-  	return `assets/events/${this.event.sprite}.png`;
+  	if(this.mapSquare.hasPlayer) {
+  		return this.generatePlayer();
+  	}
+  	return `assets/events/${this.mapSquare.event.sprite}.png`;
+  }
+
+  generatePlayer() {
+  	return 'assets/player/front_2.png';
   }
 
 }
