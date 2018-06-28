@@ -23,6 +23,7 @@ import { TitleScreenComponent } from './title-screen/title-screen.component';
 import { GameScreenComponent } from './game-screen/game-screen.component';
 import { MenuComponent } from './menu/menu.component';
 import { MapTileComponent } from './map-tile/map-tile.component';
+import { EventHostComponent } from './event-host/event-host.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -37,7 +38,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TitleScreenComponent,
     GameScreenComponent,
     MenuComponent,
-    MapTileComponent
+    MapTileComponent,
+    EventHostComponent
   ],
   imports: [
     BrowserModule,
