@@ -14,11 +14,12 @@ export class MapService {
 	currentRoomName:string;
     map:MapSquare[];
     room:Room;
+    playerPosition:number;
   constructor(private data:DataService) { }
 
   loadMap(newRoomName) {
-	this.currentRoomName = newRoomName;
-	this.translate();
+	  this.currentRoomName = newRoomName;
+	  this.translate();
   }
 
   private translate() {
@@ -47,6 +48,43 @@ export class MapService {
     }
   }
 
+  movePlayerUp() {
+    let newPosition = this.playerPosition - this.room.x;
+    if(newPosition < this.map.length) {
+      this.movePlayer(newPosition);
+    }
+  }
+
+  movePlayerDown() {
+    let newPosition = this.playerPosition + this.room.x;
+    if(newPosition > 0) {
+      this.movePlayer(newPosition);
+    }
+  }
+
+  movePlayerRight() {
+    let newPosition = this.playerPosition + 1;
+    if(newPosition < this.map.length) {
+      this.movePlayer(newPosition);
+    }
+  }
+
+  movePlayerLeft() {
+    let newPosition = this.playerPosition - 1;
+    if(newPosition > -1) {
+      this.movePlayer(newPosition);
+    }
+  }
+
+  private movePlayer(n:number) {
+    let mapSquare = this.map[n];
+    if(mapSquare.event.sprite === "blank" && !mapSquare.tile.solid) {
+      mapSquare.hasPlayer = true;
+      this.map[this.playerPosition].hasPlayer = false;
+      this.playerPosition = n;
+    }
+  }
+
   private startPlayer(room:Room) {
     let z = this.convertXYtoZ(room.playerStart, room.x);
       let proposedPlayerStart = this.map[z];
@@ -55,6 +93,7 @@ export class MapService {
         return;
       }
       proposedPlayerStart.hasPlayer = true;
+      this.playerPosition = z;
   }
 
   private convertXYtoZ(playerStart:number[], roomWidth:number) {
