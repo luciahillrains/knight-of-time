@@ -31,6 +31,14 @@ export class MapTileComponent implements OnInit {
   	return `assets/events/${this.mapSquare.event.sprite}.png`;
   }
 
+  generateId() {
+  	if(this.mapSquare.hasPlayer) {
+  		return "player";
+  	} else {
+  		return "";
+  	}
+  }
+
   generatePlayer() {
   	return 'assets/player/front_2.png';
   }

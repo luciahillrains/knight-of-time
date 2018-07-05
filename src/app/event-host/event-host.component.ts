@@ -15,7 +15,7 @@ export class EventHostComponent implements OnInit {
   }
   
   @HostListener('document:keydown', ['$event']) 
-  keypress(event:KeyboardEvent) {
+  keydown(event:KeyboardEvent) {
   		if(event.key === 'Escape') {
 			this.ui.displayMenu = !this.ui.displayMenu;
 		}
@@ -31,6 +31,14 @@ export class EventHostComponent implements OnInit {
 		}
 		if(event.key === 'd') {
 			this.map.movePlayerRight();
+		}
+	}
+
+	@HostListener('document:keypress', ['$event'])
+	keypress(event:KeyboardEvent) {
+		let player = document.querySelector("#player");
+		if(player) {
+			player.scrollIntoView({ behavior: 'instant', block:'center'});
 		}
 	}
 
