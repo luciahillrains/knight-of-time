@@ -6,6 +6,15 @@ html, body {
   height: 97%;
 }
 
+html {
+	overflow: hidden;
+}
+
+body {
+	height: 966px;
+	width: 1143px;
+}
+
 $color-blue: #93baf9;
 
 .screen {
@@ -63,6 +72,16 @@ button {
 			cursor: pointer;
 		}
 	}
+}
+
+.menu-screen {
+	position: absolute;
+	top: 0;
+	left: 25%;
+	width: 75%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
 }
 
 

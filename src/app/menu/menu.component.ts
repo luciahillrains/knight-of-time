@@ -12,6 +12,15 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  showItemScreen() {
+    this.hideAllMenuScreens();
+    this.ui.currentMenuMode = "item";
+  }
+
+  hideAllMenuScreens() {
+    this.ui.currentMenuMode = "";
+  }
+
   getClass() {
   	return this.ui.displayMenu?"visible":"hidden";
   }

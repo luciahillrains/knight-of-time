@@ -5,5 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class UiService {
 	displayMenu: boolean = false;
+	currentMenuMode:string = "";
   constructor() { }
 }

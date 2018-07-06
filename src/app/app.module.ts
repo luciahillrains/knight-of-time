@@ -24,6 +24,7 @@ import { GameScreenComponent } from './game-screen/game-screen.component';
 import { MenuComponent } from './menu/menu.component';
 import { MapTileComponent } from './map-tile/map-tile.component';
 import { EventHostComponent } from './event-host/event-host.component';
+import { ItemScreenComponent } from './item-screen/item-screen.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -39,7 +40,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     GameScreenComponent,
     MenuComponent,
     MapTileComponent,
-    EventHostComponent
+    EventHostComponent,
+    ItemScreenComponent
   ],
   imports: [
     BrowserModule,

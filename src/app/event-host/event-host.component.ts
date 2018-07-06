@@ -18,6 +18,7 @@ export class EventHostComponent implements OnInit {
   keydown(event:KeyboardEvent) {
   		if(event.key === 'Escape') {
 			this.ui.displayMenu = !this.ui.displayMenu;
+			this.ui.currentMenuMode = "";
 		}
 
 		if(event.key === 'w') {

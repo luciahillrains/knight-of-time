@@ -1,4 +1,5 @@
 <app-menu></app-menu>
+<app-item-screen [ngStyle]="calculateItemScreenStyle()"></app-item-screen>
 <div class="game-area" [ngStyle]="calculateDimensions()">
 	<app-map-tile *ngFor="let msq of mapService.map" [mapSquare]="msq" ></app-map-tile>
 </div>
