@@ -18,7 +18,7 @@ export class ItemTransformer {
 		item.name = jsonObj.name;
 		item.description = jsonObj.description;
 		item.effect = this.effectTransformer.transform(jsonObj.effect);
-
+		console.log("effect after transformation", item.effect);
 		item.type = this.itemTypeMap.get(jsonObj.type);
 		if(item.type == null) {
 			item.type = ItemType.KEY;

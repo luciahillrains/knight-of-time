@@ -1,3 +1,26 @@
 <div class="menu-screen">
-  item-screen works!
+	<h1>Items</h1>
+	<div class="item-panel-container">
+		<div class="inventory-panel panel">
+			<button class="item-button" *ngFor="let k of player.inventory" (click)="selectItem(k)">{{data.items.get(k).name}}</button>
+		</div>
+		<div class="details-panel panel " *ngIf="exposedItem.name != ''">
+			<h2>{{exposedItem.name}}</h2>
+			<p>{{exposedItem.description}}</p>
+			<div class="type">
+				<i>{{ItemType[exposedItem.type]}}</i>
+			</div>
+			<div class="effect">
+				<span>{{EffectAction[exposedItem.effect.action]}} {{exposedItem.effect.constant}} {{Operand[exposedItem.effect.operand]}}</span>
+			</div>
+			<div class="se">
+				<div *ngFor="let se of exposedItem.specialEffect">
+					{{SpecialEffect[se]}
+				</div>
+			</div>
+			<div class="cards">
+				<b>Cards will appear here.</b>
+			</div>
+		</div>
+	</div>
 </div>

@@ -15,6 +15,7 @@ export class TitleScreenComponent implements OnInit {
   constructor(private dataService:DataService, private mapService:MapService) {
   	this.build = AppConfig.build;
     this.mapService.loadMap(AppConfig.debugnewGameStart);
+    console.log(dataService.items);
    }
 
   ngOnInit() {
