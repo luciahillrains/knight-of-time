@@ -10,7 +10,7 @@
 			<div class="type">
 				<i>{{ItemType[exposedItem.type]}}</i>
 			</div>
-			<div class="effect" *ngIf="exposedItem.effect != null">
+			<div class="effect" *ngIf="exposedItem.effect != null && exposedItem.effect.constant != 0">
 				<span>{{EffectAction[exposedItem.effect.action]}} {{exposedItem.effect.constant}} {{Operand[exposedItem.effect.operand]}}</span>
 			</div>
 			<div class="se">
@@ -19,7 +19,12 @@
 				</div>
 			</div>
 			<div class="cards">
-				<b>Cards will appear here.</b>
+				<app-card *ngFor="let card of cards()" [card]="card"></app-card>
+			</div>
+			<div class="button-container">
+				<button *ngIf="exposedItem.type === ItemType.CONSUMEABLE">Use</button>
+				<button *ngIf="exposedItem.type !== ItemType.KEY && exposedItem.type !== ItemType.CONSUMEABLE">Equip</button>
+				<button *ngIf="exposedItem.type !== ItemType.KEY">Drop</button>
 			</div>
 		</div>
 	</div>

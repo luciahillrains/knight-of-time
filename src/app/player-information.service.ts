@@ -4,6 +4,6 @@ import { Item } from './objects/item';
   providedIn: 'root'
 })
 export class PlayerInformationService {
-	inventory:string[] = ["tonic"];
+	inventory:string[] = ["tonic", "blackSigil","handAxe"];
   constructor() { }
 }

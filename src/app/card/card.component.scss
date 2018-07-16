@@ -1,0 +1,25 @@
+div {
+	height: 64px;
+	width: 64px;
+	display: inline-block;
+	margin: 5px;
+
+	&.free {
+		background-color: white;
+	}
+
+	&.locked {
+		background-color: red;
+	}
+
+	&.priority {
+		background-color: aqua;
+	}
+
+}
+
+div span {
+	font-size: 18px;
+	color: black;
+}
+

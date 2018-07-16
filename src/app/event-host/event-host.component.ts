@@ -31,7 +31,7 @@ export class EventHostComponent implements OnInit {
 		if(player) {
 			player.scrollIntoView({ behavior: 'instant', block:'center'});
 		}*/
-				if(event.key === 'w') {
+	    if(event.key === 'w') {
 			this.map.movePlayerUp();
 		}
 		if(event.key === 's') {

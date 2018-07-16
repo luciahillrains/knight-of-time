@@ -25,16 +25,16 @@ export class ItemTransformer {
 		}
 
 		let jsonCards = jsonObj.cards.split(",");
-		for(let card in jsonCards) {
+		for(let card of jsonCards) {
 			item.cards.push(card);
 		}
+		
 		if(jsonObj.specialEffect) {
 			let jsonSEs = jsonObj.specialEffect.split(",");
-			for(let se in jsonSEs) {
+			for(let se of jsonSEs) {
 				item.specialEffect.push(this.specialEffectsTransformer.transform(se));
 			}
 		}
-
 
 		return item;
 	}

@@ -5,7 +5,8 @@ import * as url from 'url';
 let win, serve;
 const args = process.argv.slice(1);
 serve = args.some(val => val === '--serve');
-
+const NON_DEBUG_WIDTH = 1800;
+const NON_DEBUG_HEIGHT = 1000;
 function createWindow() {
 
   const electronScreen = screen;
@@ -15,8 +16,8 @@ function createWindow() {
   win = new BrowserWindow({
     x: 0,
     y: 0,
-    width: size.width,
-    height: size.height
+    width: NON_DEBUG_WIDTH,
+    height: NON_DEBUG_HEIGHT
   });
 
   if (serve) {
