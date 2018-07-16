@@ -37,10 +37,11 @@ export class EventHostComponent implements OnInit {
 
 	@HostListener('document:keypress', ['$event'])
 	keypress(event:KeyboardEvent) {
-		let player = document.querySelector("#player");
+		
+		/*let player = document.querySelector("#player");
 		if(player) {
 			player.scrollIntoView({ behavior: 'instant', block:'center'});
-		}
+		}*/
 	}
 
 }
