@@ -22,13 +22,15 @@ export class MapTileComponent implements OnInit {
   }
 
   generateObjectSrc() {
-  	if(typeof this.mapSquare.event === 'undefined') {
+  	if(this.mapSquare.event == null) {
   		return "";
   	}
-  	if(this.mapSquare.hasPlayer) {
+  	else if(this.mapSquare.hasPlayer) {
   		return this.generatePlayer();
   	}
-  	return `assets/events/${this.mapSquare.event.sprite}.png`;
+    else {
+          return `assets/events/${this.mapSquare.event.sprite}.png`;
+    }
   }
 
   generateId() {

@@ -78,7 +78,7 @@ export class MapService {
 
   private movePlayer(n:number) {
     let mapSquare = this.map[n];
-    if(mapSquare.event.sprite === "blank" && !mapSquare.tile.solid) {
+    if((mapSquare.event.sprite === "blank"||mapSquare.event == null) && !mapSquare.tile.solid) {
       mapSquare.hasPlayer = true;
       this.map[this.playerPosition].hasPlayer = false;
       this.playerPosition = n;
@@ -88,7 +88,7 @@ export class MapService {
   private startPlayer(room:Room) {
     let z = this.convertXYtoZ(room.playerStart, room.x);
       let proposedPlayerStart = this.map[z];
-      if(proposedPlayerStart.event.sprite !== "blank") {
+      if(proposedPlayerStart.event.sprite !== "blank")  {
         console.log("ERROR: Cannot start player on space with event");
         return;
       }

@@ -10,7 +10,7 @@
 			<div class="type">
 				<i>{{ItemType[exposedItem.type]}}</i>
 			</div>
-			<div class="effect">
+			<div class="effect" *ngIf="exposedItem.effect != null">
 				<span>{{EffectAction[exposedItem.effect.action]}} {{exposedItem.effect.constant}} {{Operand[exposedItem.effect.operand]}}</span>
 			</div>
 			<div class="se">
