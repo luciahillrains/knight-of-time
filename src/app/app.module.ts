@@ -26,6 +26,7 @@ import { MapTileComponent } from './map-tile/map-tile.component';
 import { EventHostComponent } from './event-host/event-host.component';
 import { ItemScreenComponent } from './item-screen/item-screen.component';
 import { CardComponent } from './card/card.component';
+import { StatusScreenComponent } from './status-screen/status-screen.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -43,7 +44,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MapTileComponent,
     EventHostComponent,
     ItemScreenComponent,
-    CardComponent
+    CardComponent,
+    StatusScreenComponent
   ],
   imports: [
     BrowserModule,
