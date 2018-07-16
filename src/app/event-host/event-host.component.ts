@@ -21,7 +21,17 @@ export class EventHostComponent implements OnInit {
 			this.ui.currentMenuMode = "";
 		}
 
-		if(event.key === 'w') {
+
+	}
+
+	@HostListener('document:keypress', ['$event'])
+	keypress(event:KeyboardEvent) {
+		
+		/*let player = document.querySelector("#player");
+		if(player) {
+			player.scrollIntoView({ behavior: 'instant', block:'center'});
+		}*/
+				if(event.key === 'w') {
 			this.map.movePlayerUp();
 		}
 		if(event.key === 's') {
@@ -33,15 +43,6 @@ export class EventHostComponent implements OnInit {
 		if(event.key === 'd') {
 			this.map.movePlayerRight();
 		}
-	}
-
-	@HostListener('document:keypress', ['$event'])
-	keypress(event:KeyboardEvent) {
-		
-		/*let player = document.querySelector("#player");
-		if(player) {
-			player.scrollIntoView({ behavior: 'instant', block:'center'});
-		}*/
 	}
 
 }
