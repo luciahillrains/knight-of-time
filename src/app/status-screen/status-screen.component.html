@@ -38,6 +38,26 @@
 			<td></td>
 		</tr>
 	</table>
+
+	<table>
+		<tr>
+			<td>Weapon:</td>
+			<td>{{player.equipment.weapon.name}}</td>
+		</tr>
+		<tr>
+			<td>Armor:</td>
+			<td>{{player.equipment.armor.name}}</td>
+		</tr>
+		<tr>	
+			<td>Accessory:</td>
+			<td>
+				{{player.equipment.accessory.name}} 
+				<div class="small" *ngFor="let se of player.equipment.accessory.specialEffect">
+					{{SpecialEffect[se]}}
+				</div>
+			</td>
+		</tr>
+	</table>
 	<h2>Perks</h2>
 	<div class="perk-container">
 		<div class="perk" *ngFor="let perk of player.perks">

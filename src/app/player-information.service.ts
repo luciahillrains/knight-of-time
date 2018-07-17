@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Item } from './objects/item';
 import {SpecialEffect} from './objects/card';
+
 export enum PerkKey {
 	INCREASE_PIETY,
 	INCREASE_HIT_RATE,
@@ -33,6 +34,12 @@ export class Status {
 	intelligence:number = 3;
 	piety:number = 3;
 }
+
+export class Equipment {
+	weapon:Item = new Item();
+	armor:Item = new Item();
+	accessory:Item = new Item();
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -41,13 +48,15 @@ export class PlayerInformationService {
 	name:string = "Joan";
 	status:Status = new Status();
 	delta:DeltaStatus = new DeltaStatus();
+	equipment:Equipment = new Equipment();
 	perks:Perk[] = [];
 	furthestFloor:number=0;
 	furthestFloorAllTime:number = 0;
 	currentFloor:number = 0;
-
+	
   constructor() {
   	this.generateTemporaryPerks();
+  	this.generateTemporaryEquipment();
    }
 
    private generateTemporaryPerks() {
@@ -59,5 +68,18 @@ export class PlayerInformationService {
    		perk2.name = "Military Skill";
    		perk2.description = "You are an accomplished military leader.  You can fell many foes with one swing from your blade.";
    		this.perks.push(perk2);
+   }
+
+   private generateTemporaryEquipment() {
+   		let w = new Item();
+   		w.name = "Marshal's Sword";
+   		this.equipment.weapon = w;
+   		let a = new Item();
+   		a.name = "General's Uniform";
+   		this.equipment.armor = a;
+   		let c = new Item();
+   		c.name = "Dark Amulet";
+   		c.specialEffect.push(SpecialEffect.HURT_DARK);
+   		this.equipment.accessory = c;
    }
 }
