@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PlayerInformationService} from '../player-information.service';
 
 @Component({
   selector: 'app-status-screen',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private player:PlayerInformationService) { }
 
   ngOnInit() {
   }

@@ -1,6 +1,49 @@
 <div class="menu-screen">
-	<p>
-	  status-screen works!
-	</p>
+	<h1>{{player.name}}</h1>
+	<table>
+		<tr>
+			<td>Current HP:</td>
+			<td>{{player.status.hp}}</td>
+			<td>Max HP:</td>
+			<td>{{player.status.maxHp}}+{{player.delta.hp}}</td>
+		</tr>
+		<tr>
+			<td>Attack:</td>
+			<td>{{player.status.attack}}+{{player.delta.attack}}</td>
+			<td>Defense:</td>
+			<td>{{player.status.defense}}+{{player.delta.defense}}</td>
+		</tr>
+		<tr>
+			<td>Hit Rate:</td>
+			<td>{{player.status.hitRate}}+{{player.delta.hitRate}}</td>
+			<td>Accuracy:</td>
+			<td>{{player.status.accuracy}}+{{player.delta.accuracy}}</td>
+		</tr>
+		<tr>
+			<td>Intelligence:</td>
+			<td>{{player.status.intelligence}}+{{player.delta.intelligence}}</td>
+			<td>Piety:</td>
+			<td>{{player.status.piety}}+{{player.delta.piety}}
+		</tr>
+		<tr>
+			<td>Current Floor:</td>
+			<td>{{player.currentFloor}}</td>
+			<td>Furthest Floor In Play:</td>
+			<td>{{player.furthestFloor}}</td>
+		</tr>
+		<tr>
+			<td>Furthest Floor In History:</td>
+			<td>{{player.furthestFloorAllTime}}</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<h2>Perks</h2>
+	<div class="perk-container">
+		<div class="perk" *ngFor="let perk of player.perks">
+			<div><b>{{perk.name}}</b></div>
+			<div>{{perk.description}}</div>
+		</div>
+	</div>
 
 </div>
