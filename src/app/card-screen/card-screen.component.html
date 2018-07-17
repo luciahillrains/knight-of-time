@@ -1,3 +1,26 @@
 <div class="menu-screen">
-	THIS WORKS
+	<h1>Cards</h1>
+	<div class="section" *ngIf="player.equipment.weapon.name !== ''">
+		<h2>{{player.equipment.weapon.name}}</h2>
+		<div class="card-container">
+			<app-card *ngFor="let card of weaponCards()" [card]="card"></app-card>
+		</div>
+	</div>
+	<div class="section" *ngIf="player.equipment.armor.name !== ''">
+		<h2>{{player.equipment.armor.name}}</h2>
+		<div class="card-container">
+			<app-card *ngFor="let card of armorCards()" [card]="card"></app-card>
+		</div>
+	</div>
+	<div class="section" *ngIf="player.equipment.accessory.name !== ''">
+		<h2>{{player.equipment.accessory.name}}</h2>
+		<div class="card-container">
+			<app-card *ngFor="let card of accessoryCards()" [card]="card"></app-card>
+		</div>
+	</div>
+	<div class="section">
+				<div class="card-container">
+			<app-card *ngFor="let card of baseCards()" [card]="card"></app-card>
+		</div>
+	</div>
 </div>

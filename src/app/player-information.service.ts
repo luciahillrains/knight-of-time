@@ -50,10 +50,11 @@ export class PlayerInformationService {
 	delta:DeltaStatus = new DeltaStatus();
 	equipment:Equipment = new Equipment();
 	perks:Perk[] = [];
+	cards:string[] = ["useItem", "defend", "runAway"];
 	furthestFloor:number=0;
 	furthestFloorAllTime:number = 0;
 	currentFloor:number = 0;
-	
+
   constructor() {
   	this.generateTemporaryPerks();
   	this.generateTemporaryEquipment();
@@ -73,12 +74,14 @@ export class PlayerInformationService {
    private generateTemporaryEquipment() {
    		let w = new Item();
    		w.name = "Marshal's Sword";
+   		w.cards = ["spinStrike", "concussion"];
    		this.equipment.weapon = w;
    		let a = new Item();
    		a.name = "General's Uniform";
    		this.equipment.armor = a;
    		let c = new Item();
    		c.name = "Dark Amulet";
+   		c.cards = ["spinStrike", "concussion", "defend", "heal", "opalHeal", "opalDisaster"];
    		c.specialEffect.push(SpecialEffect.HURT_DARK);
    		this.equipment.accessory = c;
    }
