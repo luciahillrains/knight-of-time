@@ -1,13 +1,15 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import {AppConfig} from '../../environments/environment';
 import {UiService} from '../ui.service';
+import {PlayerInformationService} from '../player-information.service';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  constructor(private ui:UiService) { }
+  constructor(private ui:UiService, private player:PlayerInformationService) { }
 
   ngOnInit() {
   }

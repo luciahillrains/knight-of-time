@@ -1,6 +1,7 @@
 <div class="menu-container" [ngClass]="getClass()">
-	<div class="character-name">Joan</div>
-	<div class="hp-container">HP: XX/XX</div>
+	<div class="character-name">{{player.name}}n</div>
+	<div class="hp-container">HP: {{player.status.hp}}/{{player.status.maxHp + player.delta.hp}}</div>
+	<div class="floor-container">Floor {{player.currentFloor}}</div>
 	<div class="options-menu" style="width:100%">
 		<button (click)="showItemScreen()">Items</button>
 		<button (click)="showStatusScreen()">Status</button>
