@@ -35,6 +35,10 @@ export class GameScreenComponent implements OnInit {
   calculateConfigScreenStyle() {
     return this.calculateMenuScreenStyle("config");
   }
+
+  calculateDebugScreenStyle() {
+    return this.calculateMenuScreenStyle("debug");
+  }  
   calculateMenuScreenStyle(screenMode) {
   	if(this.ui.currentMenuMode === screenMode) {
   		return {

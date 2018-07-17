@@ -32,6 +32,11 @@ export class MenuComponent implements OnInit {
     this.ui.currentMenuMode = "config";
   }
 
+  showDebugScreen() {
+    this.hideAllMenuScreens();
+    this.ui.currentMenuMode = "debug";
+  }
+
   hideAllMenuScreens() {
     this.ui.currentMenuMode = "";
   }

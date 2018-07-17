@@ -3,6 +3,7 @@
 <app-status-screen [ngStyle]="calculateStatusScreenStyle()"></app-status-screen>
 <app-card-screen [ngStyle]="calculateCardScreenStyle()"></app-card-screen>
 <app-config-menu [ngStyle]="calculateConfigScreenStyle()"></app-config-menu>
+<app-debug-screen [ngStyle]="calculateDebugScreenStyle()"></app-debug-screen>
 <div class="game-area" [ngStyle]="calculateDimensions()">
 	<app-map-tile *ngFor="let msq of mapService.map" [mapSquare]="msq" ></app-map-tile>
 </div>

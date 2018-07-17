@@ -38,7 +38,6 @@ export class CardScreenComponent implements OnInit {
   			 cards.push(this.data.cards.get(k));
   		}
   	}
-  	console.log(cards);
   	return cards;
   }
 
