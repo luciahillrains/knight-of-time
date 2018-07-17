@@ -27,6 +27,8 @@ import { EventHostComponent } from './event-host/event-host.component';
 import { ItemScreenComponent } from './item-screen/item-screen.component';
 import { CardComponent } from './card/card.component';
 import { StatusScreenComponent } from './status-screen/status-screen.component';
+import { BattleScreenComponent } from './battle-screen/battle-screen.component';
+import { CardScreenComponent } from './card-screen/card-screen.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -45,7 +47,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     EventHostComponent,
     ItemScreenComponent,
     CardComponent,
-    StatusScreenComponent
+    StatusScreenComponent,
+    BattleScreenComponent,
+    CardScreenComponent
   ],
   imports: [
     BrowserModule,
