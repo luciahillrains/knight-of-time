@@ -31,6 +31,7 @@ import { BattleScreenComponent } from './battle-screen/battle-screen.component';
 import { CardScreenComponent } from './card-screen/card-screen.component';
 import { ConfigMenuComponent } from './config-menu/config-menu.component';
 import { DebugScreenComponent } from './debug-screen/debug-screen.component';
+import { CharacterSelectionComponent } from './character-selection/character-selection.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -53,7 +54,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     BattleScreenComponent,
     CardScreenComponent,
     ConfigMenuComponent,
-    DebugScreenComponent
+    DebugScreenComponent,
+    CharacterSelectionComponent
   ],
   imports: [
     BrowserModule,
