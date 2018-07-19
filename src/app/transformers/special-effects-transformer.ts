@@ -6,9 +6,12 @@ export class SpecialEffectsTransformer {
 	constructor() {
 		this.map = new Map();
 		this.map.set("", SpecialEffect.NONE);
+		this.map.set("NONE", SpecialEffect.NONE);
 		this.map.set("Fear", SpecialEffect.FEAR);
 		this.map.set("Resist Fire", SpecialEffect.RESIST_FIRE);
 		this.map.set("Resist Water", SpecialEffect.RESIST_WATER);
+		this.map.set("Resist Ice", SpecialEffect.RESIST_ICE);
+		this.map.set("RESIST_ICE", SpecialEffect.RESIST_ICE);
 		this.map.set("Resist Light", SpecialEffect.RESIST_LIGHT);
 		this.map.set("Resist Earth", SpecialEffect.RESIST_EARTH);
 		this.map.set("Resist Air", SpecialEffect.RESIST_AIR);

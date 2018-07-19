@@ -14,6 +14,9 @@ import {RoomImporter} from './importers/room-importer';
 import {Room} from './objects/room';
 import {TileImporter} from './importers/tile-importer';
 import {Tile} from './objects/tile';
+import {CharacterImporter} from './importers/character-importer';
+import {Character} from './objects/character';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,6 +29,7 @@ export class DataService {
   items:Map<string, Item>;
   rooms: Map<string, Room>;
   tiles: Tile[];
+  characters: Character[];
   constructor() {
   	this.setupAffinities();
     this.setupCards();
@@ -35,48 +39,54 @@ export class DataService {
     this.setupItems();
     this.setupRooms();
     this.setupTiles();
+    this.setupCharacters();
    }
 
 
-  setupAffinities() {
+  private setupAffinities() {
   	let importer:AffinityImporter = new AffinityImporter();
   	let affinities = importer.import();
   	this.affinities = affinities;
   }
 
-  setupCards() {
+  private setupCards() {
     let importer:CardImporter = new CardImporter();
     let cards = importer.import();
     this.cards = cards;
   }
 
-  setupConversations() {
+  private setupConversations() {
     let importer:ConversationImporter = new ConversationImporter();
     this.conversations = importer.import();
   }
 
-  setupEnemies() {
+  private setupEnemies() {
     let importer:EnemyImporter = new EnemyImporter();
     this.enemies = importer.import();
   }
 
-  setupEvents() {
+  private setupEvents() {
     let importer:EventImporter = new EventImporter();
     this.events = importer.import();
   }
 
-  setupItems() {
+  private setupItems() {
     let importer:ItemImporter = new ItemImporter();
     this.items = importer.import();
   }
 
-  setupRooms() {
+  private setupRooms() {
     let importer = new RoomImporter();
     this.rooms = importer.import();
   }
 
-  setupTiles() {
+  private setupTiles() {
     let importer = new TileImporter();
     this.tiles = importer.import();
+  }
+
+  private setupCharacters() {
+    let importer = new CharacterImporter();
+    this.characters = importer.import();
   }
 }

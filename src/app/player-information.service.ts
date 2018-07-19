@@ -4,7 +4,14 @@ import {SpecialEffect} from './objects/card';
 
 export enum PerkKey {
 	INCREASE_PIETY,
-	INCREASE_HIT_RATE,
+	INCREASE_INT,
+	BRAVERY,
+	AVERAGE,
+	HIGHER_RUN_AWAY,
+	ACTIVISM,
+	REVOLUTION,
+	HIGH_MIND,
+	SMOKER,
 	NONE
 }
 export class Perk {
