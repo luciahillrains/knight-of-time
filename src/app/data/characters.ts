@@ -21,7 +21,7 @@ export const CHARACTERS_JSON = `
 				},
 				{
 					"name": "Supreme Bravery",
-					"description": "Add Bravery card - if you are attacked by an attack that puts you below or at 0, you'll have 10 HP.",
+					"description": "Add Bravery card - an attack that would've killed you will not.",
 					"key": "BRAVERY",
 					"effect": "NONE"
 				}
@@ -48,7 +48,7 @@ export const CHARACTERS_JSON = `
 				},
 				{
 					"name": "Rogue",
-					"description": "Add with Protest card - raises everything by 10 for one turn.",
+					"description": "Add with Protest card - prevents enemy from taking their turn.",
 					"key": "ACTIVISM",
 					"effect": "NONE"
 				}
@@ -103,7 +103,7 @@ export const CHARACTERS_JSON = `
 				},
 				{
 					"name": "Revolution!",
-					"description": "Adds the Revolution card - swap Dots with opponent.",
+					"description": "Adds the Patriotism card - raises attack and intelligence by 10 next turn, but lowers piety to 1.",
 					"key": "REVOLUTION",
 					"effect": "NONE"
 				}
